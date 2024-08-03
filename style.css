@@ -44,9 +44,6 @@ header {
 .nav-links a:hover {
     color: #ffffff;
 }
-.cta-button {
-    display: none; /* Hidden, no CTA button needed */
-}
 .container {
     display: flex;
     flex-direction: column;
@@ -56,13 +53,59 @@ header {
     position: relative;
     padding-top: 70px; /* To account for the fixed header height */
 }
-.content {
+.hero {
     background: #1e1e1e;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     z-index: 1;
     text-align: center;
+    max-width: 900px;
+    margin: 1rem auto;
+}
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.projects-section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.projects-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.project-card {
+    display: block;
+    background: #2c2c2c;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.4;
 }
 canvas {
     position: absolute;
