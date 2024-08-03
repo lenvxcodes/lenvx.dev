@@ -1,4 +1,3 @@
-// Particle settings
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -47,11 +46,22 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
-init();
-animate();
+function debounce(func, wait) {
+    let timeout;
+    return function(...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
 
-window.addEventListener('resize', () => {
+
+const debouncedResize = debounce(() => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     init();
-});
+}, 300);
+
+window.addEventListener('resize', debouncedResize);
+
+init();
+animate();
